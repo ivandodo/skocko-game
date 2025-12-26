@@ -52,14 +52,14 @@ const RefinedSpadeIcon = (props) => (
   >
     <path
       d="M12 2C12 2 2 11 2 15C2 18.5 5 21 8.5 21C11 21 12 19 12 19C12 19 13 21 15.5 21C19 21 22 18.5 22 15C22 10 12 2 12 2Z"
-      fill={props.fill}
+      fill={props.fill || "#000000"}
       stroke={props.color || "rgba(255,255,255,0.4)"}
       strokeWidth={props.strokeWidth || 1.5}
       strokeLinejoin="round"
     />
     <path
       d="M12 19L9 23H15L12 19Z"
-      fill={props.fill}
+      fill={props.fill || "#000000"}
       stroke={props.color || "rgba(255,255,255,0.4)"}
       strokeWidth={props.strokeWidth || 1.5}
       strokeLinejoin="round"
@@ -75,14 +75,14 @@ const RefinedClubIcon = (props) => (
   >
     <path
       d="M10.5 9.5 A 4.5 4.5 0 1 1 13.5 9.5 A 4.5 4.5 0 1 1 14 16 L 10 16 A 4.5 4.5 0 1 1 10.5 9.5 Z"
-      fill={props.fill}
+      fill={props.fill || "#000000"}
       stroke={props.color || "rgba(255,255,255,0.4)"}
       strokeWidth={props.strokeWidth || 1.5}
       strokeLinejoin="round"
     />
     <path
       d="M12 15L9 22H15L12 15Z"
-      fill={props.fill}
+      fill={props.fill || "#000000"}
       stroke={props.color || "rgba(255,255,255,0.4)"}
       strokeWidth={props.strokeWidth || 1.5}
       strokeLinejoin="round"

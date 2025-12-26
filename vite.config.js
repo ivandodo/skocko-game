@@ -4,7 +4,7 @@ import { viteSingleFile } from 'vite-plugin-singlefile'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/skocko-game/',
+  base: './',
   plugins: [react(), viteSingleFile()],
   build: {
     outDir: 'docs',

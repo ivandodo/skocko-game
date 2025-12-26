@@ -175,15 +175,15 @@ body {
 }
 
 .symbol-icon {
-  width: 60%;
-  height: 60%;
+  width: 75%;
+  height: 75%;
   max-width: 32px;
   max-height: 32px;
 }
 
 .symbol-btn .symbol-icon {
-  width: 65%;
-  height: 65%;
+  width: 80%;
+  height: 80%;
 }
 
 .dot.red {
@@ -394,11 +394,10 @@ button.btn-submit.result.lost {
     grid-template-rows: repeat(2, 1fr);
   }
 
-  .slot,
-  .dot {
-    width: 34px;
-    height: 34px;
-    border-radius: 6px;
+  .slot {
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
   }
 
   .dot {
@@ -408,9 +407,9 @@ button.btn-submit.result.lost {
   }
 
   .symbol-btn {
-    width: 42px;
-    height: 42px;
-    border-radius: 8px;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
   }
 
   .selector {
@@ -438,8 +437,8 @@ button.btn-submit.result.lost {
 
 @media (max-width: 360px) {
   .slot {
-    width: 30px;
-    height: 30px;
+    width: 36px;
+    height: 36px;
   }
 
   .dot {
@@ -448,8 +447,8 @@ button.btn-submit.result.lost {
   }
 
   .symbol-btn {
-    width: 36px;
-    height: 36px;
+    width: 42px;
+    height: 42px;
   }
 
   .header h1 {

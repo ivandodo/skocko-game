@@ -15,8 +15,8 @@ import {
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
 
-const SkockoIcon = ({ className, glow }) => (
-  <svg viewBox="0 0 24 24" className={className} style={{ overflow: 'visible' }}>
+const SkockoIcon = (props) => (
+  <svg viewBox="0 0 24 24" className={props.className} style={{ overflow: 'visible', ...props.style }}>
     <defs>
       <radialGradient id="skockoHead" cx="50%" cy="40%" r="50%">
         <stop offset="0%" stopColor="#fff176" />
@@ -24,7 +24,12 @@ const SkockoIcon = ({ className, glow }) => (
       </radialGradient>
     </defs>
     {/* Head */}
-    <circle cx="12" cy="13" r="9" fill="url(#skockoHead)" stroke="#000" strokeWidth="0.2" />
+    <circle
+      cx="12" cy="13" r="9"
+      fill="url(#skockoHead)"
+      stroke={props.color || "rgba(255,255,255,0.4)"}
+      strokeWidth={props.strokeWidth || 1.5}
+    />
     {/* Glasses */}
     <circle cx="8.5" cy="11" r="3.5" stroke="#7e22ce" strokeWidth="1.2" fill="none" />
     <circle cx="15.5" cy="11" r="3.5" stroke="#7e22ce" strokeWidth="1.2" fill="none" />
@@ -39,10 +44,56 @@ const SkockoIcon = ({ className, glow }) => (
   </svg>
 );
 
+const RefinedSpadeIcon = (props) => (
+  <svg
+    viewBox="0 0 24 24"
+    {...props}
+    style={{ overflow: 'visible', ...props.style }}
+  >
+    <path
+      d="M12 2C12 2 2 11 2 15C2 18.5 5 21 8.5 21C11 21 12 19 12 19C12 19 13 21 15.5 21C19 21 22 18.5 22 15C22 10 12 2 12 2Z"
+      fill={props.fill}
+      stroke={props.color || "rgba(255,255,255,0.4)"}
+      strokeWidth={props.strokeWidth || 1.5}
+      strokeLinejoin="round"
+    />
+    <path
+      d="M12 19L9 23H15L12 19Z"
+      fill={props.fill}
+      stroke={props.color || "rgba(255,255,255,0.4)"}
+      strokeWidth={props.strokeWidth || 1.5}
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+const RefinedClubIcon = (props) => (
+  <svg
+    viewBox="0 0 24 24"
+    {...props}
+    style={{ overflow: 'visible', ...props.style }}
+  >
+    <path
+      d="M10.5 9.5 A 4.5 4.5 0 1 1 13.5 9.5 A 4.5 4.5 0 1 1 14 16 L 10 16 A 4.5 4.5 0 1 1 10.5 9.5 Z"
+      fill={props.fill}
+      stroke={props.color || "rgba(255,255,255,0.4)"}
+      strokeWidth={props.strokeWidth || 1.5}
+      strokeLinejoin="round"
+    />
+    <path
+      d="M12 15L9 22H15L12 15Z"
+      fill={props.fill}
+      stroke={props.color || "rgba(255,255,255,0.4)"}
+      strokeWidth={props.strokeWidth || 1.5}
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
 const SYMBOLS = [
   { id: 'skocko', icon: SkockoIcon, color: '#ffd700', label: 'Skočko' },
-  { id: 'club', icon: Club, color: '#1a1a1a', label: 'Tref' },
-  { id: 'spade', icon: Spade, color: '#1a1a1a', label: 'Pik' },
+  { id: 'club', icon: RefinedClubIcon, color: '#000000', label: 'Tref' },
+  { id: 'spade', icon: RefinedSpadeIcon, color: '#000000', label: 'Pik' },
   { id: 'heart', icon: Heart, color: '#ef4444', label: 'Herc' },
   { id: 'diamond', icon: Diamond, color: '#ef4444', label: 'Karo' },
   { id: 'star', icon: Star, color: '#fbbf24', label: 'Zvezda' },
@@ -131,9 +182,9 @@ const App = () => {
     return (
       <Icon
         className={`symbol-icon ${className}`}
-        color={isSkocko ? undefined : "rgba(255,255,255,0.4)"}
+        color="rgba(255,255,255,0.4)"
         fill={isSkocko ? undefined : symbol.color}
-        strokeWidth={isSkocko ? undefined : 1.5}
+        strokeWidth={1.5}
         glow={glow}
         style={{
           ...style,

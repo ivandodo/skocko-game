@@ -7,6 +7,6 @@ export default defineConfig({
   base: './',
   plugins: [react(), viteSingleFile()],
   build: {
-    outDir: 'build',
+    outDir: 'docs',
   }
 })
